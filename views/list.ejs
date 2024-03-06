@@ -1,0 +1,28 @@
+<!-- Insert Header -->
+<%- include("header") -%>
+    <div class="main" id="heading">
+        <h1><%= titles %></h1>
+    </div>
+    
+    <!-- Todo Items -->
+    <div class="box">
+        <!-- List -->
+                <% todo.forEach(function (itemdb){ %>
+                    <form action="/delete" method="post"> 
+                        <div class="item">
+                            <input type="checkbox" onchange=this.form.submit() name="checkbox" value = <%= itemdb._id %>>
+                            <p><%= itemdb.name %></p>
+                        </div>
+                        <!-- Create Hidden Button -->
+                        <input type="hidden" name="hidden_btn" value="<%= titles %>">
+                    </form>
+                <% }) %>
+
+            <form action="/" method="post" class="items">    
+                <input type="text" name="todo_input" placeholder="New Todo">
+                <button type="submit" name="list" value="<%= titles %>">+</button>
+            </form>
+    </div>
+       
+<!-- Insert Footer -->
+<%- include("footer") -%>                       
