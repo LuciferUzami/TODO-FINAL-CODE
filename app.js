@@ -14,7 +14,8 @@ app.use(express.static("public"))
 app.set("view engine", "ejs")  
 
 // Connect the Mongodb Local servier
-mongoose.connect("mongodb://localhost:27017/todolist")
+mongoose.connect("mongodb+srv://Praveen:lucifer@cluster0.lmxc0pv.mongodb.net/todolist")
+// mongoose.connect("mongodb://localhost:27017/todolist")
 
 // Schema
 const todoSchema = {
